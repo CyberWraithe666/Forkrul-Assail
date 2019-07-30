@@ -1,0 +1,51 @@
+/*	-WHAT IS THIS?-
+	This file adds optional material to "MPMB's Character Record Sheet" found at https://flapkan.com/mpmb/charsheets
+	Import this file using the "Add Extra Materials" bookmark.
+	-KEEP IN MIND-
+	It is recommended to enter the code in a fresh sheet before adding any other information (i.e. before making your character with it).
+*/
+
+/*	-INFORMATION-
+	Subject:	Race
+	Effect:		This script adds a player race, called "Forkrul Assail"
+				This race is made by Tadd
+	Code by:	Tadd
+	Date:		2018-11-21 (sheet v13.0.0beta6)
+*/
+
+var iFileName = "Forkrul Assail.js";
+RequiredSheetVersion(13);
+
+SourceList["HB", 0] = {
+	name : "Forkrul Assail",
+	abbreviation : "frkas",
+	group : "D&D Beyond",
+	url : "https://malazan.fandom.com/wiki/Forkrul_Assail",
+	date : "2018/07/30"
+};
+
+RaceList["Forkrul Assail"] = {
+	regExpSearch : /^((?=.*forkrul)(?=.*assail)).*$/i,
+	name : "Assail",
+	sortname : "Forkrul Assail",
+	source : ["HB", 0,
+	plural : "Forkrul Assail",
+	size : 3,
+	speed : {
+		walk : { spd : 50, enc : 25 },
+	},
+	languageProfs : [1, "Common", "Assail", "Telepathy"],
+	vision : [["Darkvision", 60]],
+	savetxt : { 
+	immune : ["charmed"],
+	adv_vs : ["poison", "Restrain"] },
+	dmgres : ["Poison", "Psychic"],
+	skills : ["Survival", "History", "Athletics", "Acrobatics"],
+	age : " reach maturity by age 70 and cannot die from age",
+	height : " stand around 7 feet tall",
+	weight : " have thin, lightweight bodies that weigh between 100 and 140 pounds",
+	heightMetric : " stand around 213 cm tall",
+	weightMetric : " have thin, lightweight bodies that weigh between 45 and 63 kg",
+	scores : [2, 2, 0, 0, 0, 0],
+	trait : "Assail (+2 Strength, +2 Dexterity)\n   Triple jointed: I extra sets of joints in my limbs and a second pair of hips allowing me to move my body in any direction also giving my melee attacks reach\n\n   Ahkrast Korvalain: I have immunity to mid affecting magics as a result of my connection to the Assail hold\n\n   Unencumbered Movement: I ignore difficult terrain"
+};
